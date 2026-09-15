@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ThermaLens - evidence-backed industrial thermal anomaly monitoring." />
+    <title>ThermaLens | Thermal anomaly intelligence</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e1c2f'/%3E%3Cpath d='M16 6c-4 5-8 8-8 13a8 8 0 0 0 16 0c0-5-4-8-8-13Z' fill='%23f06c3b'/%3E%3Ccircle cx='16' cy='20' r='3' fill='%23ffd166'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">✦</span><span>Therma<span class="brand-accent">Lens</span></span></div>
+        <div class="workspace-label">OPERATIONS DESK</div>
+        <nav class="nav" aria-label="Primary navigation">
+          <button class="nav-item active"><span>◈</span> Live monitor</button>
+          <button class="nav-item"><span>◌</span> Event archive</button>
+          <button class="nav-item"><span>⌁</span> Facility context</button>
+          <button class="nav-item"><span>▥</span> Model performance</button>
+        </nav>
+        <div class="sidebar-divider"></div>
+        <div class="workspace-label">DATA LAYERS</div>
+        <label class="layer-toggle"><input type="checkbox" checked /><span class="toggle-ui"></span><span>FIRMS / VIIRS</span><em>128</em></label>
+        <label class="layer-toggle"><input type="checkbox" checked /><span class="toggle-ui blue"></span><span>Industrial facilities</span><em>43</em></label>
+        <label class="layer-toggle"><input type="checkbox" checked /><span class="toggle-ui green"></span><span>Land-use context</span></label>
+        <label class="layer-toggle"><input type="checkbox" /><span class="toggle-ui muted"></span><span>Cloud cover</span></label>
+        <div class="sidebar-bottom"><div class="status-dot"></div><div><strong>Data services online</strong><small>Last sync 4 min ago</small></div></div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div><div class="eyebrow">DISASTER MANAGEMENT / SOUTH ASIA</div><h1>Thermal anomaly monitor</h1></div>
+          <div class="top-actions"><button class="icon-button" aria-label="Notifications">♧<span class="notif"></span></button><button class="avatar">VR</button></div>
+        </header>
+
+        <section class="summary-row" aria-label="Overview metrics">
+          <article class="metric-card"><div class="metric-label">UNREVIEWED ANOMALIES <span class="info">i</span></div><div class="metric-value">128</div><div class="metric-foot danger-text">↑ 14% <span>vs. previous 24h</span></div></article>
+          <article class="metric-card"><div class="metric-label">HIGH PRIORITY EVENTS <span class="info">i</span></div><div class="metric-value">07</div><div class="metric-foot warm-text">3 require action <span>within 2 hours</span></div></article>
+          <article class="metric-card"><div class="metric-label">PERSISTENT SOURCES <span class="info">i</span></div><div class="metric-value">19</div><div class="metric-foot calm-text">↓ 2 <span>since last week</span></div></article>
+          <article class="metric-card"><div class="metric-label">MODEL PRECISION <span class="info">i</span></div><div class="metric-value">91.4<span class="unit">%</span></div><div class="metric-foot calm-text">↑ 1.8% <span>last validation</span></div></article>
+        </section>
+
+        <section class="control-bar">
+          <div class="filter-title"><span class="filter-icon">≡</span> Triage queue <span class="queue-count">07</span></div>
+          <div class="filter-group"><button class="filter-chip selected">All events</button><button class="filter-chip"><span class="chip-dot orange"></span>Industrial fire <b>03</b></button><button class="filter-chip"><span class="chip-dot violet"></span>Persistent source <b>04</b></button><button class="filter-chip"><span class="chip-dot gray"></span>Insufficient evidence <b>02</b></button></div>
+          <button class="date-button">Last 24 hours <span>⌄</span></button>
+        </section>
+
+        <section class="workspace-grid">
+          <div class="map-card panel">
+            <div class="panel-head"><div><div class="panel-kicker">LIVE GIS VIEW</div><h2>Thermal activity across Gujarat</h2></div><div class="map-tools"><button class="mini-button active">Satellite</button><button class="mini-button">Roads</button><button class="expand-button">⤢</button></div></div>
+            <div class="map-canvas" id="mapCanvas">
+              <div class="map-label label-ahmedabad">AHMEDABAD</div><div class="map-label label-vadodara">VADODARA</div><div class="map-label label-bharuch">BHARUCH</div><div class="map-label label-kandla">KANDLA</div>
+              <div class="water water-one"></div><div class="water water-two"></div><div class="road road-a"></div><div class="road road-b"></div><div class="road road-c"></div><div class="district d-one"></div><div class="district d-two"></div><div class="district d-three"></div>
+              <button class="map-marker marker-one" data-event="0" aria-label="Select Dahej petrochemical cluster"><span></span></button><button class="map-marker marker-two" data-event="1" aria-label="Select Jamnagar refinery"><span></span></button><button class="map-marker marker-three" data-event="2" aria-label="Select Hazira industrial zone"><span></span></button><button class="map-marker marker-four" data-event="3" aria-label="Select Mundra source"><span></span></button>
+              <div class="map-legend"><span><i class="legend-dot orange"></i>Industrial fire</span><span><i class="legend-dot violet"></i>Persistent source</span><span><i class="legend-dot gray"></i>Other</span></div>
+              <div class="map-zoom"><button>+</button><button>−</button></div><div class="map-scale">0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50 km</div>
+            </div>
+            <div class="map-footer"><span><i class="live-dot"></i> 128 observations loaded</span><span class="mono">VIIRS / 375 m resolution</span><span class="mono">15 SEP 2026 · 16:42 IST</span></div>
+          </div>
+
+          <aside class="event-panel panel"><div class="panel-head event-head"><div><div class="panel-kicker">SELECTED EVENT</div><h2 id="eventTitle">Potential industrial fire</h2></div><span class="priority-badge" id="priorityBadge">HIGH PRIORITY</span></div><div class="event-id mono" id="eventId">FIRMS-IND-240915-0042</div><div class="confidence-block"><div class="confidence-ring"><div><strong id="confidenceValue">94</strong><small>%</small></div></div><div><div class="confidence-label">CLASSIFICATION CONFIDENCE</div><p id="confidenceCopy">Strong match to an active industrial fire.</p></div></div><div class="event-divider"></div><div class="section-label">EVIDENCE SIGNALS</div><div class="evidence-list" id="evidenceList"><div class="evidence-item"><span class="evidence-icon thermal">≈</span><div><strong>Thermal signature</strong><small>High FRP · 48.6 MW · 3 consecutive passes</small></div><span class="signal up">↑</span></div><div class="evidence-item"><span class="evidence-icon facility">⌂</span><div><strong>Facility proximity</strong><small>0.8 km from Dahej petrochemical cluster</small></div><span class="signal up">↑</span></div><div class="evidence-item"><span class="evidence-icon temporal">◷</span><div><strong>Temporal behavior</strong><small>New onset · no prior activity in 30 days</small></div><span class="signal up">↑</span></div><div class="evidence-item"><span class="evidence-icon context">⌖</span><div><strong>Land-use context</strong><small>Industrial zone · adjacent storage yards</small></div><span class="signal neutral">—</span></div></div><div class="event-actions"><button class="primary-action" id="reviewButton">Mark for review <span>→</span></button><button class="secondary-action" id="detailsButton">View full evidence</button></div></aside>
+        </section>
+
+        <section class="lower-grid"><div class="queue-card panel"><div class="panel-head"><div><div class="panel-kicker">PRIORITIZED QUEUE</div><h2>Events needing attention</h2></div><button class="text-button">View archive →</button></div><div class="table-wrap"><table><thead><tr><th>EVENT</th><th>CLASSIFICATION</th><th>CONFIDENCE</th><th>LAST OBSERVED</th><th></th></tr></thead><tbody id="eventTable"><tr class="table-row active-row" data-event="0"><td><strong>Dahej petrochemical cluster</strong><small>21.695° N, 72.644° E</small></td><td><span class="table-tag orange-tag">Industrial fire</span></td><td><div class="confidence-bar"><span style="width:94%"></span></div><strong>94%</strong></td><td class="mono">16:38 IST</td><td>›</td></tr><tr class="table-row" data-event="1"><td><strong>Jamnagar refinery belt</strong><small>22.470° N, 70.057° E</small></td><td><span class="table-tag violet-tag">Persistent source</span></td><td><div class="confidence-bar violet-bar"><span style="width:88%"></span></div><strong>88%</strong></td><td class="mono">16:21 IST</td><td>›</td></tr><tr class="table-row" data-event="2"><td><strong>Hazira industrial zone</strong><small>21.117° N, 72.652° E</small></td><td><span class="table-tag orange-tag">Industrial fire</span></td><td><div class="confidence-bar"><span style="width:81%"></span></div><strong>81%</strong></td><td class="mono">15:56 IST</td><td>›</td></tr></tbody></table></div></div><div class="trend-card panel"><div class="panel-kicker">ACTIVITY TREND</div><div class="trend-heading"><h2>Observations by source</h2><span class="trend-period">7 days⌄</span></div><div class="chart"><div class="chart-y"><span>160</span><span>120</span><span>80</span><span>40</span><span>0</span></div><div class="chart-area"><div class="chart-gridline g1"></div><div class="chart-gridline g2"></div><div class="chart-gridline g3"></div><div class="chart-gridline g4"></div><svg viewBox="0 0 420 150" preserveAspectRatio="none" aria-label="Seven day observations line chart"><path d="M0 117 C35 104 48 119 78 101 S124 76 148 89 S196 69 220 82 S262 44 288 59 S330 47 350 64 S390 25 420 40" fill="none" stroke="#ef6d3f" stroke-width="3"/><path d="M0 132 C34 124 52 130 78 120 S121 110 148 115 S193 91 220 108 S264 93 288 101 S331 74 350 88 S389 62 420 77" fill="none" stroke="#8f7bd7" stroke-width="3"/></svg><div class="chart-x"><span>09 Sep</span><span>11 Sep</span><span>13 Sep</span><span>15 Sep</span></div></div></div><div class="chart-legend"><span><i class="line-key orange-line"></i>Industrial fire</span><span><i class="line-key violet-line"></i>Persistent source</span></div></div></section>
+        <footer><span>ThermaLens prototype · SIH26162</span><span>Evidence first · uncertainty aware</span></footer>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status">Event added to review queue</div>
+    <script src="app.js"></script>
+  </body>
+</html>
